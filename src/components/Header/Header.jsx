@@ -7,7 +7,13 @@ export const Header = () => {
    const { ref, isHeaderTransparent } = useHeader();
    return (
       <Head ref={ref} showBg={isHeaderTransparent}>
-         <NamedLogo>
+         <NamedLogo
+            to={'hero'}
+            spy={true}
+            smooth={true}
+            offset={-122}
+            duration={500}
+         >
             <Logo />
             <LogoText>
                Finance<WhiteLogoText>Ledger</WhiteLogoText>

@@ -25,7 +25,7 @@ export const About = () => {
    const direction = 'direct';
    const clr = color.mainAccent;
    return (
-      <PhotoSection>
+      <PhotoSection id="about">
          <PicWrapper
             direction={direction}
             alignmentDirection={'width'}

@@ -24,7 +24,7 @@ export const Blog = () => {
    const direction = 'reverse';
    const clr = color.secondaryAccent;
    return (
-      <PhotoSection>
+      <PhotoSection id={'blog'}>
          <PicWrapper
             direction={direction}
             alignmentDirection={'height'}

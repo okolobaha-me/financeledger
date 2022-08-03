@@ -1,23 +1,24 @@
-import { Navigate, NavigationLink } from "./Navigation.styled";
-import { navigationList } from "./navigationList";
+import { Navigate, NavigationLink } from './Navigation.styled';
+import { navigationList } from './navigationList';
 
 export const Navigation = () => {
-  //убираем обновление страницы при клике на линку
-  const handleLinkClick = (e) => {
-    e.preventDefault();
-  };
-
-  return (
-    <nav>
-      <Navigate>
-        {navigationList.map(({ link, name }) => (
-          <li key={name}>
-            <NavigationLink onClick={handleLinkClick} href={link}>
-              {name}
-            </NavigationLink>
-          </li>
-        ))}
-      </Navigate>
-    </nav>
-  );
+   return (
+      <nav>
+         <Navigate>
+            {navigationList.map(({ link, name }) => (
+               <li key={name}>
+                  <NavigationLink
+                     to={link}
+                     spy={true}
+                     smooth={true}
+                     offset={-122}
+                     duration={500}
+                  >
+                     {name}
+                  </NavigationLink>
+               </li>
+            ))}
+         </Navigate>
+      </nav>
+   );
 };

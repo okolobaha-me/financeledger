@@ -17,7 +17,7 @@ export const Cases = () => {
    ));
 
    return (
-      <CasesSection>
+      <CasesSection id={'cases'}>
          <Subtitle margin={'big'}>This is what we do</Subtitle>
          <Title>Business Cases</Title>
          <Text>

@@ -20,7 +20,7 @@ const photo = {
 export const Contact = () => {
    const direction = 'direct';
    return (
-      <PhotoSection>
+      <PhotoSection id={'contact'}>
          <PicWrapper
             direction={direction}
             mobileH={'220px'}

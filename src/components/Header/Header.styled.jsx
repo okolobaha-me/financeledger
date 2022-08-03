@@ -5,6 +5,7 @@ import {
    defaultTransition,
    mediaBreackpoint,
 } from '../../utils/styleVariables';
+import { Link } from 'react-scroll';
 
 export const Head = styled.header`
    z-index: 999;
@@ -43,7 +44,7 @@ export const Head = styled.header`
    }
 `;
 
-export const NamedLogo = styled.div`
+export const NamedLogo = styled(Link)`
    color: ${color.mainAccent};
 
    display: flex;
