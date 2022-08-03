@@ -11,10 +11,17 @@ import { Warn } from '../Icons/Warn';
 import { useState } from 'react';
 
 export const Form = () => {
-   const [focus, setFocus] = useState(null);
+   const [focusName, setFocusName] = useState(false);
+   const [focusEmail, setFocusEmail] = useState(false);
 
-   const handleBlur = () => {
-      setFocus(null);
+   const handleBlurName = e => {
+      if (e.currentTarget.value) return;
+      setFocusName(null);
+   };
+
+   const handleBlurEmail = e => {
+      if (e.currentTarget.value) return;
+      setFocusEmail(null);
    };
 
    const {
@@ -29,19 +36,17 @@ export const Form = () => {
       <form onSubmit={handleSubmit(onSubmit)}>
          <InputsWrapper>
             <Label htmlFor={'name'}>
-               <LabelTitle isFocus={focus === 'name'}>
-                  Enter your name
-               </LabelTitle>
+               <LabelTitle isFocus={focusName}>Enter your name</LabelTitle>
                <Input
                   id={'name'}
                   type="text"
                   {...register('name')}
-                  onFocus={() => setFocus('name')}
-                  onBlur={handleBlur}
+                  onFocus={() => setFocusName(true)}
+                  onBlur={handleBlurName}
                />
             </Label>
             <Label htmlFor={'email'}>
-               <LabelTitle isFocus={focus === 'email'}>Enter email*</LabelTitle>
+               <LabelTitle isFocus={focusEmail}>Enter email*</LabelTitle>
                <Input
                   id={'email'}
                   type="text"
@@ -52,8 +57,8 @@ export const Form = () => {
                         value: /^\S+@\S+$/i,
                      },
                   })}
-                  onFocus={() => setFocus('email')}
-                  onBlur={handleBlur}
+                  onFocus={() => setFocusEmail(true)}
+                  onBlur={handleBlurEmail}
                />
                {errors.email?.message && (
                   <Error>
