@@ -13,9 +13,12 @@ export const Link = styled.a`
 
    color: ${color.lightText};
 
-   transition: color ${defaultTransition};
+   transition: all ${defaultTransition};
 
    :hover {
-      color: ${color.mainAccent};
+      ${({ hoverType }) =>
+         hoverType === 'color'
+            ? `color: ${color.mainAccent};`
+            : `opacity: 0.8;`};
    }
 `;

@@ -1,11 +1,7 @@
 import styled from '@emotion/styled';
 import bg from '../../images/home/showcase.jpg';
 import retinaBg from '../../images/home/showcase@2x.jpg';
-import {
-   color,
-   defaultTransition,
-   mediaBreackpoint,
-} from '../../utils/styleVariables';
+import { color, mediaBreackpoint } from '../../utils/styleVariables';
 import { baseButtonStyles } from '../../utils/baseStyles';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
@@ -68,7 +64,6 @@ export const Button = styled.button`
    background-color: ${color.mainAccent};
    padding-left: 40px;
    padding-right: 30px;
-   transition: all ${defaultTransition};
 
    :hover {
       background-color: ${color.hoverHeroButton};

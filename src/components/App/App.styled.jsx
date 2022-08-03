@@ -1,10 +1,8 @@
-import styled from "@emotion/styled";
-import { mediaBreackpoint } from "../../utils/styleVariables";
+import styled from '@emotion/styled';
+import { mediaBreackpoint } from '../../utils/styleVariables';
 
-//todo remove bgc
 export const Container = styled.div`\
   margin: 0 auto;
-  background-color: #e3e3e3;
   min-height: 100vh;
   position: relative;
 

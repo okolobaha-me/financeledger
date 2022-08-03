@@ -25,7 +25,7 @@ export const Gallery = styled.ul`
    }
 `;
 
-export const Case = styled.li`
+export const Case = styled.div`
    & > * {
       width: 100%;
       & > * {

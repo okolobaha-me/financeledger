@@ -2,8 +2,20 @@ import { Case, CasesSection, Gallery } from './Cases.styled';
 import { Subtitle, Text, Title } from '../Typography/Typography.styled';
 import { caseList } from './caseList';
 import { Picture } from '../Picture/Picture';
+import FsLightbox from 'fslightbox-react';
+import { useState } from 'react';
 
 export const Cases = () => {
+   const [toggler, setToggler] = useState(false);
+
+   const images = caseList.map(item => (
+      <li key={item.name} onClick={() => setToggler(!toggler)}>
+         <Case>
+            <Picture {...item} />
+         </Case>
+      </li>
+   ));
+
    return (
       <CasesSection>
          <Subtitle margin={'big'}>This is what we do</Subtitle>
@@ -13,11 +25,19 @@ export const Cases = () => {
             sapiente!
          </Text>
          <Gallery>
-            {caseList.map(item => (
-               <Case key={item.name}>
-                  <Picture {...item} />
-               </Case>
-            ))}
+            <FsLightbox
+               toggler={toggler}
+               sources={images}
+               sli
+               svg={{
+                  slideButtons: {
+                     next: {
+                        title: 'asdasd',
+                     },
+                  },
+               }}
+            />
+            {images}
          </Gallery>
       </CasesSection>
    );

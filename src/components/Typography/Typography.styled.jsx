@@ -1,5 +1,6 @@
 import styled from '@emotion/styled';
 import { mediaBreackpoint } from '../../utils/styleVariables';
+import { baseSectionTitleStyles } from '../../utils/baseStyles';
 
 export const Subtitle = styled.p`
    font-weight: 400;
@@ -13,9 +14,7 @@ export const Subtitle = styled.p`
 `;
 
 export const Title = styled.h2`
-   font-weight: 300;
-   font-size: 38px;
-   line-height: 1.26;
+   ${baseSectionTitleStyles};
    margin-bottom: 24px;
 `;
 

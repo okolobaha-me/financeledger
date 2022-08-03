@@ -4,7 +4,9 @@ import { Hero } from '../Hero/Hero';
 import { About } from '../About/About';
 import { Cases } from '../Cases/Cases';
 import { Team } from '../Team/Team';
-import { SocialLinks } from '../SocialLinks/SocialLinks';
+import { Footer } from '../Footer/Footer';
+import { Blog } from '../Blog/Blog';
+import { Contact } from '../Contact/Contact';
 
 export const App = () => {
    return (
@@ -15,7 +17,10 @@ export const App = () => {
             <About />
             <Cases />
             <Team />
+            <Blog />
+            <Contact />
          </main>
+         <Footer />
       </Container>
    );
 };

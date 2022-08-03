@@ -7,6 +7,7 @@ import {
 } from '../../utils/styleVariables';
 
 export const Head = styled.header`
+   z-index: 999;
    color: ${color.lightText};
    padding: 21px 12px;
    display: flex;

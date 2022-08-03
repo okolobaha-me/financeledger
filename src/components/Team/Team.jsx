@@ -14,7 +14,7 @@ export const Team = () => {
          </Text>
          <MemberList>
             {members.map(member => (
-               <MemberCard {...member} />
+               <MemberCard {...member} key={member.position} />
             ))}
          </MemberList>
       </TeamSection>

@@ -1,4 +1,8 @@
 import { Picture } from '../Picture/Picture';
+import webp from '../../images/home/blog.webp';
+import webpX2 from '../../images/home/blog@2x.webp';
+import jpg from '../../images/home/blog.jpg';
+import jpgX2 from '../../images/home/blog@2x.jpg';
 import { Subtitle, Text, Title } from '../Typography/Typography.styled';
 import {
    Button,
@@ -8,11 +12,6 @@ import {
 } from '../PhotoSection/PhotoSection.styled';
 import { color } from '../../utils/styleVariables';
 
-import webp from '../../images/home/people.webp';
-import webpX2 from '../../images/home/people@2x.webp';
-import jpg from '../../images/home/people.jpg';
-import jpgX2 from '../../images/home/people@2x.jpg';
-
 const photo = {
    webp,
    webpX2,
@@ -21,15 +20,15 @@ const photo = {
    name: 'Our team',
 };
 
-export const About = () => {
-   const direction = 'direct';
-   const clr = color.mainAccent;
+export const Blog = () => {
+   const direction = 'reverse';
+   const clr = color.secondaryAccent;
    return (
       <PhotoSection>
          <PicWrapper
             direction={direction}
-            alignmentDirection={'width'}
-            mobileH={'220px'}
+            alignmentDirection={'height'}
+            mobileH={'240px'}
          >
             <Picture {...photo} />
          </PicWrapper>
