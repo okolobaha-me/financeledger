@@ -3,7 +3,7 @@ import { faAngleRight } from '@fortawesome/free-solid-svg-icons';
 
 export const Hero = () => {
    return (
-      <HeroStyled iв="hero">
+      <HeroStyled id="hero">
          <Title>The Sky Is The Limit</Title>
          <Slogan>We provide world class financial assistance</Slogan>
          <Button type="button">

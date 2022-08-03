@@ -1,5 +1,5 @@
 export const navigationList = [
-   { name: 'Home', link: 'heo' },
+   { name: 'Home', link: 'hero' },
    { name: 'About', link: 'about' },
    { name: 'Cases', link: 'cases' },
    { name: 'Blog', link: 'blog' },

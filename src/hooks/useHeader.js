@@ -1,36 +1,35 @@
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from 'react';
 
 export const useHeader = () => {
-  const [isHeaderTransparent, setIsHeaderTransparent] = useState(true);
-  const ref = useRef(null);
-  const [showWidth, setShowWidth] = useState(0);
+   const [isHeaderTransparent, setIsHeaderTransparent] = useState(true);
+   const ref = useRef(null);
+   const [showHeight, setShowHeight] = useState(120);
 
-  const handleScroll = useCallback(() => {
-    if (window.scrollY > showWidth) {
-      setIsHeaderTransparent(false);
-    }
-    if (window.scrollY < showWidth) {
-      setIsHeaderTransparent(true);
-    }
-  }, [showWidth]);
+   const handleScroll = useCallback(() => {
+      if (window.scrollY > ref.current.clientHeight) {
+         setIsHeaderTransparent(false);
+      }
+      if (window.scrollY < ref.current.clientHeight) {
+         setIsHeaderTransparent(true);
+      }
+   }, []);
 
-  const handleResize = () => {
-    const width = ref.current.clientWidth <= 320 ? 120 : 70;
-    setShowWidth(width);
-  };
+   const handleResize = () => {
+      setShowHeight(ref.current.clientHeight);
+   };
 
-  useEffect(() => {
-    setShowWidth(ref.current.clientWidth);
-  }, []);
+   useEffect(() => {
+      setShowHeight(ref.current.clientHeight);
+   }, []);
 
-  useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
-    window.addEventListener("resize", handleResize);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-      window.removeEventListener("resize", handleResize);
-    };
-  }, [handleScroll]);
+   useEffect(() => {
+      window.addEventListener('scroll', handleScroll);
+      window.addEventListener('resize', handleResize);
+      return () => {
+         window.removeEventListener('scroll', handleScroll);
+         window.removeEventListener('resize', handleResize);
+      };
+   }, [handleScroll]);
 
-  return { ref, isHeaderTransparent };
+   return { ref, isHeaderTransparent, showHeight };
 };

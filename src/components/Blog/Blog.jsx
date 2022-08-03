@@ -33,8 +33,8 @@ export const Blog = () => {
             <Picture {...photo} />
          </PicWrapper>
          <InfoWrapper direction={direction} color={clr}>
-            <Subtitle nargin={'small'}>What you are looking for</Subtitle>
-            <Title>We provide bespoke solutions</Title>
+            <Subtitle nargin={'small'}>April 16 2020</Subtitle>
+            <Title>Blog Post One</Title>
             <Text>
                Lorem ipsum dolor, sit amet consectetur adipisicing elit.
                Voluptate, ipsum dignissimos quae laudantium asperiores nam

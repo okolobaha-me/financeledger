@@ -1,5 +1,9 @@
 import styled from '@emotion/styled';
-import { color, mediaBreackpoint } from '../../utils/styleVariables';
+import {
+   color,
+   defaultTransition,
+   mediaBreackpoint,
+} from '../../utils/styleVariables';
 
 export const CasesSection = styled.section`
    text-align: center;
@@ -26,6 +30,12 @@ export const Gallery = styled.ul`
 `;
 
 export const Case = styled.div`
+   transition: all ${defaultTransition};
+
+   :hover {
+      opacity: 0.7;
+   }
+
    & > * {
       width: 100%;
       & > * {

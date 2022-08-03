@@ -4,7 +4,7 @@ import { Navigation } from './Navigation/Navigation';
 import { useHeader } from '../../hooks/useHeader';
 
 export const Header = () => {
-   const { ref, isHeaderTransparent } = useHeader();
+   const { ref, isHeaderTransparent, showHeight } = useHeader();
    return (
       <Head ref={ref} showBg={isHeaderTransparent}>
          <NamedLogo
@@ -19,7 +19,7 @@ export const Header = () => {
                Finance<WhiteLogoText>Ledger</WhiteLogoText>
             </LogoText>
          </NamedLogo>
-         <Navigation />
+         <Navigation offset={showHeight} />
       </Head>
    );
 };

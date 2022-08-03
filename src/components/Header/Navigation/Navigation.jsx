@@ -1,7 +1,7 @@
 import { Navigate, NavigationLink } from './Navigation.styled';
 import { navigationList } from './navigationList';
 
-export const Navigation = () => {
+export const Navigation = ({ offset }) => {
    return (
       <nav>
          <Navigate>
@@ -11,7 +11,7 @@ export const Navigation = () => {
                      to={link}
                      spy={true}
                      smooth={true}
-                     offset={-122}
+                     offset={-offset}
                      duration={500}
                   >
                      {name}
